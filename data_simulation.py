@@ -1,13 +1,11 @@
 import pandas as pd
 import numpy as np
 
-# Parametry
 n_samples = 200
 proportion_sick = 0.5
 n_sick = int(n_samples * proportion_sick)
 n_healthy = n_samples - n_sick
 
-# Chorzy na grypę
 sick_data = pd.DataFrame({
     "wiek": np.random.normal(45, 10, n_sick).astype(int),
     "płeć": np.random.choice(["M", "K"], size=n_sick),
@@ -16,7 +14,6 @@ sick_data = pd.DataFrame({
     "choroba": 1
 })
 
-# Zdrowi pacjenci
 healthy_data = pd.DataFrame({
     "wiek": np.random.normal(45, 10, n_healthy).astype(int),
     "płeć": np.random.choice(["M", "K"], size=n_healthy),
@@ -25,7 +22,6 @@ healthy_data = pd.DataFrame({
     "chory": 0
 })
 
-# Połączenie i przetasowanie
 data = pd.concat([sick_data, healthy_data], ignore_index=True)
 data = data.sample(frac=1).reset_index(drop=True)
 
