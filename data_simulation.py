@@ -13,7 +13,7 @@ sick_data = pd.DataFrame({
     "płeć": np.random.choice(["M", "K"], size=n_sick),
     "temperatura": np.random.normal(38.5, 0.5, n_sick),
     "ciśnienie": np.random.normal(110, 10, n_sick),
-    "chory": 1
+    "choroba": 1
 })
 
 # Zdrowi pacjenci
